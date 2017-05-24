@@ -1,0 +1,18 @@
+
+tasks:
+ - name: Install curl
+   yum:
+     name: curl
+     state: latest
+
+ - name: Install Artifactory
+   QSArtifactory:
+     build_id: "{{Build ID}}"
+     artifactory_ip: "{{Artifactory IP}}"
+     artifactory_username: "{{Artifactory Username}}"
+     artifactory_password: "{{Artifactory Password}}"
+     file_name: "{{File Name}}"
+     artifact_repo: "{{Artifactory Repo}}"
+     xray_ip: "{{Xray IP}}"
+     xray_username: "{{Xray Username}}"
+     xray_password: "{{Xray Password}}"
