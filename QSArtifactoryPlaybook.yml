@@ -1,6 +1,6 @@
 
 - name: Install curl
-  hosts: Art
+  hosts: all
   tasks:
    - name: Install Curl2
      yum:
@@ -9,12 +9,12 @@
 
    - name: Install Artifactory
      QSArtifactory:
-#      build_id: "{{Build ID}}"
-#      artifactory_ip: "{{Artifactory IP}}"
-#      artifactory_username: "{{Artifactory Username}}"
-#      artifactory_password: "{{Artifactory Password}}"
-#      file_name: "{{File Name}}"
-#      artifact_repo: "{{Artifactory Repo}}"
-#      xray_ip: "{{Xray IP}}"
-#      xray_username: "{{Xray Username}}"
-#      xray_password: "{{Xray Password}}"
+      build_id: "{{BuildID}}"
+      artifactory_ip: "{{ArtifactoryIP}}"
+      artifactory_username: "{{ArtifactoryUsername}}"
+      artifactory_password: "{{ArtifactoryPassword}}"
+      file_name: "{{FileName}}"
+      artifact_repo: "{{ArtifactoryRepo}}"
+      xray_ip: "{{XrayIP}}"
+      xray_username: "{{XrayUsername}}"
+      xray_password: "{{XrayPassword}}"
