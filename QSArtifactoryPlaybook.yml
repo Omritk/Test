@@ -1,6 +1,4 @@
 
-
-
 - name: Install curl
   hosts: Art
   tasks:
@@ -9,10 +7,6 @@
       name: curl
       state: latest
 
-
-- name: Install Art
-  hosts: Art
-  tasks:
    - name: Install Artifactory
      QSArtifactory:
       build_id: "{{Build ID}}"
