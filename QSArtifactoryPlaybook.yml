@@ -1,11 +1,15 @@
 
-- name: Install curl
+- name: Install Dependencies
   hosts: all
   tasks:
    - name: Install Curl2
      yum:
       name: curl
       state: latest
+   - name: Install Python Requests
+     pip:
+      name: requests
+      state: present
 
    - name: Install Artifactory
      QSArtifactory:
