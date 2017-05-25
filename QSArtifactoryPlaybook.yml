@@ -17,7 +17,7 @@
       name: requests
       state: present
 
-   - name: Install Artifactory
+   - name: Download from Artifactory
      QSArtifactory:
       build_id: "{{BuildID}}"
       artifactory_ip: "{{ArtifactoryIP}}"
@@ -28,3 +28,8 @@
       xray_ip: "{{XrayIP}}"
       xray_username: "{{XrayUsername}}"
       xray_password: "{{XrayPassword}}"
+
+   - name: Run Installation
+     unarchive:
+       src: "/tmp/{{FileName}}"
+       dest: /var/www/html
