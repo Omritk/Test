@@ -7,6 +7,14 @@
       name: curl
       state: latest
 
+   - name: Install Nginx
+     yum:
+      name: nginx
+      state: latest
+
+   - name: Starting nginx service
+     service: name=nginx state=started
+
    - name: Install Pip
      yum:
       name: python-pip
@@ -32,4 +40,5 @@
    - name: Run Installation
      unarchive:
        src: "/tmp/{{FileName}}"
-       dest: /var/www/html
+       dest: /usr/share/nginx/html
+       remote_src: yes
